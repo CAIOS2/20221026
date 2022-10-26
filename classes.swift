@@ -234,4 +234,27 @@ class Vehicle {
     private let fuelType: String
     private var currentSpeed: Duoble
     private var currentGear: Int
+    
+    init() {
+        name = ""
+        purchaseCost = 0.0
+        costToRun= 12.0
+        fuelType = ""
+        currentSpeed = 0.0
+        currentGear = 1
+    }
+
+    init (changeGear: Int) {
+        self.currentGear = changeGear
+    }
+    
+    func changeGear (to gear: Int) {
+        currentGear = gear
+    }
+    
+    
 }
+
+let vehicleChangeGearTo2 = Vehicle(changeGear: 2)
+vehicleChangeGearTo2.changeGear(to: 2)
+print("New gear: \(Vehicle.currentGear)")
